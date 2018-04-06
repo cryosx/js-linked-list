@@ -48,13 +48,11 @@ function linkedListGenerator() {
   function remove(num) {
     let prev = get(num - 1);
     let target = get(num);
-    if (num === 0) {
-      if (_head === _tail) {
-        _head = null;
-        _tail = null;
-      } else {
-        _head = _head.next;
-      }
+    if (_head === _tail) {
+      _head = null;
+      _tail = null;
+    } else if (num === 0) {
+      _head = _head.next;
     } else if (target === _tail) {
       prev.next = null;
       _tail = prev;
