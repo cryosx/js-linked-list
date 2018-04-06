@@ -21,7 +21,7 @@ function linkedListGenerator() {
 
   function add(val) {
     let newNode = { value: val, next: null };
-    if (_head === null && _tail === null) {
+    if (_head === null) {
       _head = newNode;
       _tail = newNode;
     } else {
@@ -33,7 +33,7 @@ function linkedListGenerator() {
 
   function get(num) {
     let curr = _head;
-    if (num < 0) {
+    if (num < 0 || curr === null) {
       return false;
     }
     for (let i = 0; i < num; i++) {
